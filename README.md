@@ -1,14 +1,13 @@
 # PhishGuard-An-Intelligent-Shield
 Two ML classifiers to detect phishing emails and malicious websites. Engineered features such as URL entropy, phishing keyword presence, non-HTTPS usage, and generic greeting detection. Trained models using XGBoost, Logistic Regression, and TF-IDF vectorization. Deployed in a Flask-based web app.
 
-The MLmodel was developed for Phishing Detection of Emails, it analyzes the con
-tent of an email to decide whether it is a phishing attempt or a legitimate message. It
- reads the text of the email and checks for suspicious links, urgent language, generic
- greetings, and phishing-related keywords. By combining text analysis (NLP) and intel
-ligent pattern detection, it can accurately classify emails and help protect users from
-scams.
- The ML model of Phishing Detection of Websites checks if a given website URL is
- genuine or malicious. It analyzes features like how the URL is structured, how long and
- complex it is, and especially a unique feature called URL entropy, which helps detect
- fake or randomly generated domains often used in phishing. Based on this, the model
- predicts whether the website is safe to visit or potentially harmful
+The MLmodel was developed for Phishing Detection of Emails, it analyzes the content of an email to decide whether it is a phishing attempt or a legitimate message. It reads the text of the email and checks for suspicious links, urgent language, generic greetings, and phishing-related keywords. By combining text analysis (NLP) and intelligent pattern detection, it can accurately classify emails and help protect users from scams.
+
+The ML model of Phishing Detection of Websites checks if a given website URL is genuine or malicious. It analyzes features like how the URL is structured, how long and complex it is, and especially a unique feature called URL entropy, which helps detect fake or randomly generated domains often used in phishing. Based on this, the model predicts whether the website is safe to visit or potentially harmful.
+
+Abstract:
+In today’s digital landscape, phishing attacks pose a significant threat to individuals and organizations by exploiting trust through deceptive emails and websites. This project addresses the issue by developing two intelligent machine learning models to detect phishing attempts with high accuracy.
+The first model focuses on identifying phishing emails by analyzing the textual content using Natural Language Processing (NLP). It incorporates both traditional techniques like TF-IDF and a set of handcrafted features — including the number of hyperlinks, phishing-related keywords, non-secure links, suspicious URL patterns, and generic greeting styles. This hybrid approach allows the model to capture both linguistic cues and behavioral patterns typical of phishing attempts.
+The second model targets phishing websites by evaluating URLs and structured data. Alongside over 80 technical features from the dataset, the model introduces a novel attribute — URLentropy, which measures the randomness and complexity of characters in a URL. Phishing websites often use obfuscated and irregular links, and entropy provides a mathematical measure to flag such anomalies.
+Both models are trained using robust classifiers like XGBoost and Logistic Regression, and evaluated on real-world datasets. To enhance usability, the models are integrated into separate Flask web applications with interactive frontends that not only predict threats but also explain the underlying decision using visible feature insights.
+This dual-model system provides a reliable and user-friendly solution for detecting phishing threats in real-time, contributing to the broader goal of cybersecurity awareness and defense.
