@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing Website Detector</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 Phishing Website Detector</h1>
+        <input type="text" id="urlInput" placeholder="Enter website URL here..." />
+        <button onclick="checkURL()">Check Website</button>
+        <div id="result"></div>
+        <div id="entropy"></div>
+    </div>
+
+    <script>
+        async function checkURL() {
+            const urlText = document.getElementById('urlInput').value;
+            const resultDiv = document.getElementById('result');
+            const entropyDiv = document.getElementById('entropy');
+
+            if (!urlText.trim()) {
+                resultDiv.textContent = "⚠️ Please enter a website URL.";
+                return;
+            }
+
+            resultDiv.textContent = "⏳ Checking...";
+            entropyDiv.textContent = "";
+
+            try {
+                const res = await fetch('/predict', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url: urlText })
+                });
+
+                const data = await res.json();
+                if (res.ok) {
+                    resultDiv.textContent = `✅ Prediction: ${data.label}`;
+                    entropyDiv.textContent = `🔍 URL Entropy: ${data.url_entropy}`;
+                } else {
+                    resultDiv.textContent = `❌ Error: ${data.error}`;
+                }
+            } catch (err) {
+                resultDiv.textContent = "❌ Could not connect to the server.";
+            }
+        }
+    </script>
+</body>
+</html>

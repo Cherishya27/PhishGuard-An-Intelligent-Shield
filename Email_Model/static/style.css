@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/static/email-security.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+
+    /* Flexbox to center the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* full screen height */
+}
+
+.container {
+    width: 90%;
+    max-width: 700px;
+    padding: 20px;
+    background: transparent;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #080808;
+    text-align: center;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 15px;
+    box-sizing: border-box; /* Add this line */
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 30px;
+    font-size: 16px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* No need for .banner anymore, but you can keep it if you want */
+.banner {
+    display: none;
+}
+
