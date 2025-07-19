@@ -130,5 +130,5 @@ Results
            1       0.92      0.98      0.95      1464
 
     accuracy                           0.96      3729
-   macro avg       0.96      0.96      0.96      3729
-weighted avg       0.96      0.96      0.96      3729
+    macro avg       0.96      0.96     0.96      3729
+    weighted avg    0.96      0.96     0.96      3729
